@@ -48,11 +48,22 @@ public class LinearSearch {
         int res4 = LinearSearch.search(integers, 666);
         System.out.println(res4);
 
-        // 使用自定义类
+        // 使用自定义类 - MyStudent
         MyStudent[] students = MyStudent.samples;
         int res5 = LinearSearch.search(students, new MyStudent("Li Si"));
         System.out.println(res5);
         int res6 = LinearSearch.search(students, new MyStudent("Xiao Gong"));
         System.out.println(res6);
+
+        // 使用自定义类 - Student (随堂)
+        Student[] students2 = {
+                new Student("Alice"),
+                new Student("Bobo"),
+                new Student("Charles"),
+        };
+        int res7 = LinearSearch.search(students, new MyStudent("Bobo"));
+        System.out.println(res7);
+        int res8 = LinearSearch.search(students, new MyStudent("Xiao Gong"));
+        System.out.println(res8);
     }
 }
