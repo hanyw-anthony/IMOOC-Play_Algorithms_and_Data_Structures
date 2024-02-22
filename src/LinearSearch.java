@@ -65,5 +65,20 @@ public class LinearSearch {
         System.out.println(res7);
         int res8 = LinearSearch.search(students, new MyStudent("Xiao Gong"));
         System.out.println(res8);
+
+        // 性能测试
+        int[] dataSize = {1000000, 10000000};
+        for(int n: dataSize) {
+            Integer[] dataSet = ArrayGenerator.generateOrderedArray(n);
+
+            int runs = 1000;
+            long startTime = System.nanoTime();
+            for (int k = 0; k < runs; k++)
+                LinearSearch.search(dataSet, n);
+            long endTime = System.nanoTime();
+
+            double time = (endTime - startTime) / 1000000.0;
+            System.out.println("n = " + n + ", " + runs + " runs : " + time + " ms");
+        }
     }
 }
